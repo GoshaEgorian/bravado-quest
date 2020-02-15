@@ -10,7 +10,7 @@ export default () => new Vue({
     users: [],
   },
   created: function(){
-    get('users.json').then(res => (this.users = res));
+    get('/users').then(res => (this.users = res));
   },
   components: {
     'person': Person,
