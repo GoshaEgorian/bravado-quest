@@ -9,7 +9,6 @@ export default {
   data: function(){
     return {
       users: [],
-      keyword: '',
       size: 136 + 21,
     };
   },
@@ -37,6 +36,18 @@ export default {
         address.includes(keyword)
       );
     },
+    keyword: function(){
+      return this.$route.params.keyword || '';
+    }
+  },
+  methods: {
+    setKeyword: function(text){
+      if (text !== '') {
+        this.$router.push({name: 'search', params: {keyword: text}});
+      } else {
+        this.$router.push({name: '/'});
+      }
+    },
   },
   created: function(){
     get('/users').then(res => (this.users = res));
@@ -48,7 +59,7 @@ export default {
   },
   template: `
     <section class="app__container">
-      <search-input v-on:keyword-change="keyword = $event"></search-input>
+      <search-input v-on:keyword-change="setKeyword" :keyword="keyword" />
 
       <virtual-list :size="size" :remain="remain">
         <person

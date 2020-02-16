@@ -26,7 +26,7 @@ export default {
   },
   template: `
     <section class="person" :class="{ 'person--selected': selected }">
-      <img class="person__avatar" v-bind:src="avatar">
+      <img class="person__avatar" :src="avatar">
       <div class="person__info">
         <div class="person__container">
           <h2 class="person__name" v-highlight="{keyword: keyword}">{{ name }}</h2>

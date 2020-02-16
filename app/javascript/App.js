@@ -11,6 +11,7 @@ Vue.directive('highlight', highlight);
 
 const routes = [
   {path: '/', name: '/', component: Container},
+  {path: '/search/:keyword', name: 'search', component: Container},
 ];
 
 const router = new VueRouter({routes});
