@@ -8,6 +8,12 @@ export default () => new Vue({
   el: '#app',
   data: {
     users: [],
+    size: 136,
+  },
+  computed: {
+    remain: function(){
+      return Math.floor(window.innerHeight / this.size);
+    }
   },
   created: function(){
     get('/users').then(res => (this.users = res));

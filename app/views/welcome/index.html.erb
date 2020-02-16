@@ -1,14 +1,15 @@
 <div id="app">
   <section class="app__container">
-    <virtual-list :size="100" :remain="5">
+    <virtual-list :size="size" :remain="remain">
       <person
         v-for="user in users"
-        v-bind:name="user.name"
-        v-bind:email="user.email"
-        v-bind:title="user.title"
-        v-bind:city="user.city"
-        v-bind:address="user.address"
-        v-bind:avatar="user.avatar">
+        :key="user.email"
+        :name="user.name"
+        :email="user.email"
+        :title="user.title"
+        :city="user.city"
+        :address="user.address"
+        :avatar="user.avatar">
       </person>
     </virtual-list>
   </section>
