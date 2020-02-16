@@ -1,9 +1,15 @@
 export default {
   name: 'search-input',
+  props: ['keyword'],
   data: function(){
-    return {
-      text: '',
-    };
+    return {};
   },
-  template: `<input class="search-input" type="text" v-model="text" v-on:input="$emit('keyword-change', text)" />`
+  template: `
+    <input
+      class="search-input"
+      type="text"
+      :value="keyword"
+      v-on:input="$emit('keyword-change', $event.target.value)"
+    >
+  `,
 };
