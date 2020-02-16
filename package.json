@@ -3,6 +3,7 @@
     "@rails/webpacker": "^3.0.2",
     "coffeescript": "1.12.7",
     "vue": "^2.6.11",
+    "vue-highlight-text": "^1.6.2",
     "vue-virtual-scroll-list": "^1.4.4"
   },
   "devDependencies": {

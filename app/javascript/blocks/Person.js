@@ -7,6 +7,7 @@ export default {
     'city',
     'address',
     'avatar',
+    'keyword',
   ],
   data: function(){
     return {
@@ -28,11 +29,11 @@ export default {
       <img class="person__avatar" v-bind:src="avatar">
       <div class="person__info">
         <div class="person__container">
-          <h2 class="person__name">{{ name }}</h2>
-          <p class="person__email">{{ email }}</p>
+          <h2 class="person__name" v-highlight="{keyword: keyword}">{{ name }}</h2>
+          <p class="person__email" v-highlight="{keyword: keyword}">{{ email }}</p>
         </div>
-        <h4 class="person__title">{{ title }}</h4>
-        <p class="person__address">{{ address }}, {{ city }}</p>
+        <h4 class="person__title" v-highlight="{keyword: keyword}">{{ title }}</h4>
+        <p class="person__address" v-highlight="{keyword: keyword}">{{ address }}, {{ city }}</p>
         <button class="person__button" type="button" v-on:click="switchSelect">{{ buttonText }}</button>
       </div>
     </section>
