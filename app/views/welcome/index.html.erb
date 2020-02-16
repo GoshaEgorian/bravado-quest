@@ -1,1 +1,19 @@
-Your app is expected to be here
+<div id="app">
+  <section class="app__container">
+    <search-input v-on:keyword-change="keyword = $event"></search-input>
+
+    <virtual-list :size="size" :remain="remain">
+      <person
+        v-for="user in filtered"
+        :key="user.email"
+        :name="user.name"
+        :email="user.email"
+        :title="user.title"
+        :city="user.city"
+        :address="user.address"
+        :avatar="user.avatar"
+        :keyword="keyword">
+      </person>
+    </virtual-list>
+  </section>
+</div>
